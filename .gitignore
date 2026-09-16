@@ -1,4 +1,3 @@
-# ↓ 日本版パイプライン用（既存 .gitignore に追記してください）
 .cache/
 japan-scripts/node_modules/
 *.log

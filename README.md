@@ -1,127 +1,77 @@
-# Handoff: EV メーカー別普及インフォグラフィック
+# 日本のBEV普及インフォグラフィック（日本市場版）
 
-静的サイト1枚（HTML/CSS/JS）＋データJSON。ビルド不要・依存パッケージなしで、そのままGitHubリポジトリ化してデプロイできます。
+世界メーカー別だった元サイトを、**日本市場のBEV動向をメイン・世界を参考**とする構成に作り替えたもの。データは公的統計（自販連・全軽自協・JAIA）の無料公開値を一次ソースとする。
 
-## 中身
+## 何を見せるか（4セクション）
 
-```
-site/
-  index.html          … ページ本体（マークアップ＋インラインスタイル）
-  app.js              … 表示ロジック（データ反映・年切替・スクロールアニメーション）
-  data/ev-sales.json  … ★データの唯一の情報源。更新はここだけ
-reference/
-  EV Makers Infographic.dc.html … 元のデザインプロトタイプ（参照用・デプロイ対象外）
-  support.js                    … 上記プロトタイプの実行に必要なランタイム
-.github/workflows/deploy.yml    … GitHub Pages へ自動デプロイ
-```
+1. **主体別BEV販売** — 輸入車・軽BEV・国産登録車（日産/トヨタ等）の年次推移（棒グラフ・年切替）
+2. **構成比** — 2025年の内訳（ワッフル＋凡例）。輸入車と軽EVで8割超
+3. **推移** — 2021→2025の折れ線（輸入車・軽BEV・日産・トヨタ）
+4. **売れているBEV上位** — 日産サクラ（軽）が最多、輸入BEV合計が最大
 
-`site/` の3ファイルが本番成果物です。`reference/` はデザインの原本で、デプロイには不要です。
+世界の数字は注記と参考として残す（自動更新しない）。
 
-## ローカル確認
+## データの単位と本番パス
 
-`app.js` が `fetch` でJSONを読むため、`file://` の直接オープンでは動きません（CORSで弾かれ、初期値のまま表示されます）。簡易サーバーを使ってください。
+- 本番データ: `data/ev-sales.json`（app.js が読むパス）。**単位は「台・整数」**。日本のBEVは数百〜数万台規模のため、世界版の「万台・小数1桁」は使わない。
+- メーカーキー（`index.html` の `data-bar` と一致・増減禁止）:
+  `import`(輸入車合計) / `kei`(軽BEV) / `nissan` / `toyota` / `honda` / `mitsubishi` / `mazda` / `subaru`
 
+## データソースと取得可否（★要・規約確認）
+
+| makerId | 対象 | 区分 | 一次ソース | robots/規約 | 状態 |
+| --- | --- | --- | --- | --- | --- |
+| nissan/toyota/honda/mitsubishi/mazda/subaru | 登録車 国産BEV | A | 自販連『燃料別メーカー別登録台数（乗用車）』月報Excel EV列 | 未確認 | **実装済み・実データ検算OK** |
+| import | 輸入車BEV合計 | B | 同上（輸入車行 EV列） | 未確認 | **実装済み・実データ検算OK** |
+| kei | 軽BEV | C | 全軽自協＋報道公表値 | 未確認 | 手動維持 |
+
+自販連はExcel(.xlsx)/PDFで公開。**HTMLスクレイプではなくファイルDL→表パース**が堅牢。各fetcherは `CONFIGURED=false` で未実装（実データ確認まで failed/skipped を返す安全側デフォルト）。
+
+
+
+
+## パーサ実装（ファイルDL→表パース）— 実データ検証済み
+
+`scripts/fetch/jada-parser.ts` が自販連の月報Excelを解析する。構造:
+- 1ファイル＝ある年の月別シート（12枚）。各シートは**単月**。年計は12ヶ月のEV列を合算。
+- 6行目付近の燃料ヘッダから「ＥＶ」列を動的に特定（列位置がぶれても追従）。
+- メーカー名はB列、輸入車はB列「輸入車」、合計はA列「乗用車計」。「構成比」行は除外。
+
+`scripts/fetch/jada-source.ts` が取得＋キャッシュ＋年計を束ね、各社fetcherは自社IDの値を取り出すだけ。
+
+**検算結果（`npm run test:parser` 相当）**: アップロードされた実Excel（2022-2025）を解析し、
+**月報（月別12シート）と年計（1シート=1年）の両形式**に対応:
+- 月報は12ヶ月のEV列を合算、年計は各年シートを直接読む。統一エントリ `parseJadaWorkbookForYear(buf, year)` が自動判別。
+- 2025年で 輸入車30,458／日産4,875／トヨタ4,203／乗用車計39,885 ―― 自販連発表・報道の確定値と完全一致。
+- **相互検証**: 月報2025の12ヶ月合算と、年計ファイルの2025シートが同値。独立2経路で一致し正しさを二重保証。
+- 全年（2021-2025）を年計ファイルから取得し実測値に確定。パーサ検証テスト36件パス（`npm run test:parser`）。
+
+### 残る接続作業（あなたの環境）
+- `jada-source.ts` の `JADA_YEAR_XLSX_URL[year]` に、自販連の年次月報ExcelのURLを設定する
+  （このリポジトリのCI/自販連にアクセスできる環境で有効。robots/規約の確認後）。
+- ローカル検証は環境変数で差し込み可能:
+  `JADA_TARGET_YEAR=2025 JADA_XLSX_2025=/path/to/2025.xlsx tsx scripts/update-data.ts --dry-run`
+
+## いま入っている数字の出所（更新）
+
+- **登録車（輸入車・国産6社）2021-2025**: 自販連の年計Excel（月報合算と相互検証済み）の**実測値**。
+- **軽BEV(kei)**: 全軽自協・報道の**概算**（未検算）。特に2022年値は要確認。
+- **kpis/share/regions**: 2025年の実測値から機械計算（輸入車比率76%等は報道と一致）。topShare(比率1.4%)のみ乗用車総販売が必要で概算。
+
+## 自動更新パイプライン（元サイトの仕組みを流用）
+
+`scripts/`（validate/update-data/fetch/pr-body/test）と `.github/workflows/update-data.yml` はそのまま利用。
+- 取得→マージ→検証→差分があればPR。全社failedならジョブ失敗、1社failedなら `needs-review` ラベル。
+- 検証(`validate.ts`)の不変条件は日本版に更新済み: **years値は台・非負整数**、makersキー8種、share合計100、regions4/models5、trendMax>最大値、キー完全一致、年削除禁止。
+- 異常値検知: 前回比±50%超は警告、前回≥100台からの10倍以上/負値はエラー停止。0からの立ち上がり（新型投入）は誤検知しない調整済み。
+
+### ローカル実行
 ```bash
-cd site
-npx serve .        # または: python3 -m http.server 8000
+cd scripts && npm install
+node node_modules/.bin/tsx ../scripts/validate.ts --data ../data/ev-sales.json --html ../index.html
+npm test
 ```
 
-## リポジトリ化
+## 手動維持が必要な項目
 
-リポジトリ名 `who_is_EV_Top` / 非公開（Private）で作成します。
-
-```bash
-cd design_handoff_ev_infographic
-git init -b main
-git add .
-git commit -m "feat: EV maker adoption infographic"
-gh repo create who_is_EV_Top --private --source=. --push
-# gh が無い場合: GitHub で空のプライベートリポジトリを作成し
-# git remote add origin git@github.com:h-ogawa0214/who_is_EV_Top.git
-# git push -u origin main
-```
-
-## デプロイ
-
-**推奨: Vercel**（プライベートリポジトリのまま無料で公開できる）
-
-```bash
-npx vercel --cwd site
-# 2回目以降の本番反映: npx vercel --cwd site --prod
-```
-ダッシュボードからGitHub連携する場合は Root Directory に `site`、Framework Preset は **Other**、ビルドコマンドは空。`main` へのpushで自動更新されます。
-
-**Netlify も同様**: Publish directory `site` / Build command 空。
-
-**GitHub Pages**（`.github/workflows/deploy.yml` を同梱済み）
-Settings → Pages → Source を **GitHub Actions** に変更するだけで `main` のpushごとに `site/` が公開されます。ただし**プライベートリポジトリからのPages公開は GitHub Pro / Team 以上が必要**です。無料プランのままなら Vercel を使うか、リポジトリをPublicにしてください。
-
-いずれも静的ホスティングなのでビルド設定は不要です。
-
-## データの更新フロー
-
-`site/data/ev-sales.json` を編集してcommit/push → 数十秒で反映。コードは触りません。
-
-| キー | 内容 |
-| --- | --- |
-| `meta.latestYear` | 初期表示する年 |
-| `meta.trendMax` | 推移グラフのY軸上限（万台） |
-| `meta.note` | フッターの注記 |
-| `makers` | メーカーID → `name` / `origin` / `color` |
-| `years` | `"2025": { "byd": 226.0, ... }` 年×メーカーの販売台数（万台）。年を足せば切替ボタンの年・グラフの目盛りも自動追従 |
-| `kpis` | 冒頭4枚のカウントアップ数値（`value` / `decimals`） |
-| `share` | ワッフルチャート（100マス）と凡例。`pct` の合計を100にする |
-| `regions` | 地域別の棒グラフ（4項目） |
-| `models` | 車種別トップ5（`name` / `value`） |
-
-注意点：
-- `years` のメーカーIDは `makers` のキーと一致させる。ランキングの8行は `index.html` の `data-bar` 属性に対応しており、**メーカーを増減する場合はHTML側の行も増減が必要**（色のグラデーションが各行にインラインで入っているため）。
-- `share` は100マスを塗り分けるので `pct` は整数・合計100。
-- `regions` `models` は表示行数が `index.html` 側の要素数（4件・5件）に固定。件数を変えるならHTMLも合わせる。
-
-### 自動取得について
-世界のBEV販売台数は SNE Research / Counterpoint / Rho Motion などの有償調査が主で、無料の公開APIがありません。完全自動化は現実的ではないため、次のいずれかを推奨します。
-
-1. 四半期ごとに手動でJSONを更新（もっとも確実）
-2. テスラ・BYDなど主要各社のIR発表のみスクリプトで取得し、残りは手入力。GitHub Actionsの定期実行でPRを自動作成する形にすると差分レビューができる
-
-## デザイン仕様
-
-**忠実度**: ハイファイ（本番想定の色・字送り・アニメーションを含む）。
-
-**タイポグラフィ**
-- 和文・本文: Noto Sans JP（400/500/700/900）
-- 数値・欧文ラベル: Space Grotesk（400/500/700）
-- 見出しは `font-weight: 900` / `letter-spacing: -.02em`〜`-.03em`、`clamp()` で流動
-- 小見出しラベル（`01 — RANKING` 等）は11px / `letter-spacing: .26em`
-
-**カラー**
-| 用途 | 値 |
-| --- | --- |
-| 背景 | `#07090d`（セクション交互に `#090c11`） |
-| パネル | `#0b0f15` / `#0e1218` |
-| 罫線 | `#1a212b` |
-| 本文 | `#eef2f7` / 副 `#a9b5c5` / 補助 `#8b97a8` / 最小 `#6f7c8d` |
-| アクセント | `#c6f24e` |
-| メーカー色 | BYD `#3ddc97` / テスラ `#e8503a` / 吉利 `#5aa9ff` / VW `#a78bfa` / 上汽 `#ffcf5c` / 長安 `#ff9ecb` / 現代起亜 `#58e0e8` / BMW `#b9c4d4` / その他 `#232c39` |
-
-**セクション構成**
-1. ヒーロー（大見出し＋リード＋KPIカード4枚のカウントアップ、背景の発光円が7〜9秒で明滅）
-2. 流れるティッカー（34秒ループ、両端をmaskでフェード）
-3. `01 RANKING` — メーカー別横棒8本。年ボタンで値・順位・国ラベルが更新され、行が `translateY` で並び替わる（0.7s `cubic-bezier(.22,1,.36,1)`）
-4. `02 TREND` — 推移の折れ線4本。`stroke-dashoffset` で1.7秒かけて描画、終点の丸と数値が遅れて出る
-5. `03 SHARE` — 100マスのワッフルチャート（1マス=1%）＋凡例
-6. `04 REGION` / `05 MODELS` — 地域別縦棒とランキングリスト
-7. フッター（注記・出典）
-
-**アニメーション**
-- スクロールで `IntersectionObserver`（threshold 0.12 / 下端 -8%）が発火し、`data-anim` の種別ごとにキーフレームを付与。同種要素は45msずつ遅延（上限0.9s）
-- 種別: `up`（フェードアップ 0.85s）/ `pop`（0.55s バウンス）/ `barx` `bary`（棒の伸長 ~1s）/ `draw`（線描画 1.7s）/ `fade`
-- `prefers-reduced-motion: reduce` で全て即時表示に切り替わる
-- IOが動かない環境向けに1.6秒後の強制表示フォールバックあり
-
-**レスポンシブ**
-すべて `clamp()` とauto-fitグリッドで可変。固定幅なし。折れ線グラフのみ `viewBox="0 0 1000 400"` のSVGで等比縮小。
-
-## 他フレームワークへ移植する場合
-`site/` はプレーンなHTML/JSなので、React等へ移す場合は `index.html` の各セクションをコンポーネントに分割し、`app.js` のデータ反映処理（`apply` / `renderTrend` 等）をpropsからの描画に置き換えてください。DOM直接操作は「ストリーミング表示を止めないため」の設計で、移植先では不要です。折れ線のパス計算式（`x = 80 + 880/(n-1)*i`、`y = 340 - v/trendMax*280`）はそのまま使えます。
+`kpis`（総販売・比率・輸入車比率・軽構成比）、`share`、`regions`、`models`、軽BEV(`kei`)、輸入車内訳。いずれも複数統計の合成や非公表内訳を含むため人が更新する。

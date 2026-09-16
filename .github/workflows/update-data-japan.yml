@@ -50,7 +50,7 @@ jobs:
         run: echo "month=$(date +%Y-%m)" >> "$GITHUB_OUTPUT"
 
       - name: Snapshot previous data
-        run: cp japan/data/ev-sales.json /tmp/prev-ev.json
+        run: cp data/ev-sales.json /tmp/prev-ev.json
 
       - name: Fetch & merge
         id: merge
@@ -67,7 +67,7 @@ jobs:
         run: |
           set +e
           node japan-scripts/node_modules/.bin/tsx japan-scripts/validate.ts \
-            --data japan/data/ev-sales.json --prev /tmp/prev-ev.json --html japan/index.html \
+            --data data/ev-sales.json --prev /tmp/prev-ev.json --html index.html \
             | tee /tmp/validate.log
           echo "vcode=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
           set -e
@@ -95,7 +95,7 @@ jobs:
       - name: Detect diff
         id: diff
         run: |
-          if git diff --quiet -- japan/data/ev-sales.json; then
+          if git diff --quiet -- data/ev-sales.json; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -105,12 +105,12 @@ jobs:
         if: steps.diff.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: data/japan-auto-update-${{ steps.ym.outputs.month }}
-          base: maintest
-          title: 'data(japan): EV販売データ自動更新 ${{ steps.ym.outputs.month }}'
+          branch: data/auto-update-${{ steps.ym.outputs.month }}
+          base: v2
+          title: 'data: EV販売データ自動更新 ${{ steps.ym.outputs.month }}'
           body-path: /tmp/pr-body.md
           add-paths: |
-            japan/data/ev-sales.json
+            data/ev-sales.json
           labels: ${{ steps.prbody.outputs.PR_HAS_FAILED == '1' && 'needs-review' || '' }}
           delete-branch: true
 
