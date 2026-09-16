@@ -2,7 +2,7 @@
    データは data/ev-sales.json が唯一の情報源。index.html の数値は読込前の初期表示。 */
 (function () {
   'use strict';
-  var DATA_URL = 'data/ev-sales.json';
+  var DATA_URL = 'ev-sales.json';
 
   // フォールバック（JSON が読めなかった場合に使う）
   var YEARS = {
