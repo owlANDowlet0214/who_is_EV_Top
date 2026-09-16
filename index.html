@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EV普及台数 メーカー別インフォグラフィック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #07090d; }
+  * { box-sizing: border-box; }
+  a { color: #c6f24e; text-decoration: none; }
+  a:hover { color: #e4ff96; text-decoration: underline; }
+  ::selection { background: #c6f24e; color: #07090d; }
+  @keyframes evFadeUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+  @keyframes evFade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes evGrowX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes evGrowY { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @keyframes evPop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: scale(1); } }
+  @keyframes evDraw { from { stroke-dashoffset: 1400; } to { stroke-dashoffset: 0; } }
+  @keyframes evMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes evGlow { 0%,100% { opacity: .35; } 50% { opacity: .75; } }
+  @keyframes evSpin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<div id="ev-root" style="background: #07090d; color: #eef2f7; font-family: 'Noto Sans JP', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased">
+
+  <section style="position: relative; padding: clamp(28px, 5vw, 72px) clamp(20px, 5vw, 80px) clamp(40px, 6vw, 96px); overflow: hidden; border-bottom: 1px solid #1a212b">
+    <div style="position: absolute; top: -220px; right: -160px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(198,242,78,.16), transparent 66%); animation: evGlow 7s ease-in-out infinite; pointer-events: none"></div>
+    <div style="position: absolute; top: 40%; left: -180px; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(90,169,255,.14), transparent 66%); animation: evGlow 9s ease-in-out infinite 1.5s; pointer-events: none"></div>
+
+    <div style="position: relative; display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px 20px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .28em; color: #8b97a8; text-transform: uppercase">
+      <span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #c6f24e; box-shadow: 0 0 12px #c6f24e"></span>Global BEV Report</span>
+      <span>2021 — 2025</span>
+    </div>
+
+    <h1 data-anim="up" style="opacity: 0; position: relative; margin: 22px 0 0; font-weight: 900; font-size: clamp(38px, 7.4vw, 104px); line-height: .96; letter-spacing: -.03em; text-wrap: balance">
+      電気自動車は<br />
+      <span style="color: #c6f24e">誰が</span>売っているのか
+    </h1>
+
+    <p data-anim="up" style="opacity: 0; position: relative; max-width: 54ch; margin: 26px 0 0; font-size: clamp(15px, 1.5vw, 19px); line-height: 1.85; color: #a9b5c5; text-wrap: pretty">
+      世界のバッテリーEV（BEV）市場は、5年で約7倍に膨らんだ。牽引したのは中国勢。2025年、BYDは通年でテスラを初めて追い抜き、首位に立った。メーカー別の販売台数から、勢力図の移り変わりを追う。
+    </p>
+
+    <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px; margin-top: clamp(36px, 5vw, 64px); background: #1a212b; border: 1px solid #1a212b; border-radius: 4px; overflow: hidden">
+      <div data-anim="up" style="opacity: 0; background: #0b0f15; padding: 24px 22px 20px">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .22em; color: #8b97a8">世界BEV販売（2025年）</div>
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1; color: #eef2f7"><span data-kpi="total" data-count="1870" data-decimals="0">0</span><span style="font-size: .42em; font-weight: 500; color: #8b97a8">万台</span></div>
+        <div style="margin-top: 10px; font-size: 12.5px; color: #6f7c8d">前年比 +23%</div>
+      </div>
+      <div data-anim="up" style="opacity: 0; background: #0b0f15; padding: 24px 22px 20px">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .22em; color: #8b97a8">首位 BYD のシェア</div>
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1; color: #3ddc97"><span data-kpi="topShare" data-count="12.1" data-decimals="1">0</span><span style="font-size: .42em; font-weight: 500; color: #8b97a8">%</span></div>
+        <div style="margin-top: 10px; font-size: 12.5px; color: #6f7c8d">2位テスラは 8.8%</div>
+      </div>
+      <div data-anim="up" style="opacity: 0; background: #0b0f15; padding: 24px 22px 20px">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .22em; color: #8b97a8">中国市場の占有率</div>
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1; color: #5aa9ff"><span data-kpi="china" data-count="65" data-decimals="0">0</span><span style="font-size: .42em; font-weight: 500; color: #8b97a8">%</span></div>
+        <div style="margin-top: 10px; font-size: 12.5px; color: #6f7c8d">販売地域別の内訳</div>
+      </div>
+      <div data-anim="up" style="opacity: 0; background: #0b0f15; padding: 24px 22px 20px">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .22em; color: #8b97a8">上位5社の合計シェア</div>
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1; color: #c6f24e"><span data-kpi="top5" data-count="41" data-decimals="0">0</span><span style="font-size: .42em; font-weight: 500; color: #8b97a8">%</span></div>
+        <div style="margin-top: 10px; font-size: 12.5px; color: #6f7c8d">残りを40社以上が分け合う</div>
+      </div>
+    </div>
+  </section>
+
+  <div style="display: flex; overflow: hidden; border-bottom: 1px solid #1a212b; background: #0b0f15; padding: 13px 0; white-space: nowrap; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)">
+    <div style="display: flex; gap: 40px; padding-right: 40px; animation: evMarquee 34s linear infinite; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .26em; color: #55616f; text-transform: uppercase">
+      <span>BYD 226万台</span><span style="color: #c6f24e">◆</span><span>TESLA 164万台</span><span style="color: #c6f24e">◆</span><span>GEELY 125万台</span><span style="color: #c6f24e">◆</span><span>VW GROUP 101万台</span><span style="color: #c6f24e">◆</span><span>SAIC 90万台</span><span style="color: #c6f24e">◆</span><span>CHANGAN 62万台</span><span style="color: #c6f24e">◆</span><span>HYUNDAI·KIA 60万台</span><span style="color: #c6f24e">◆</span><span>BMW 43万台</span><span style="color: #c6f24e">◆</span>
+      <span>BYD 226万台</span><span style="color: #c6f24e">◆</span><span>TESLA 164万台</span><span style="color: #c6f24e">◆</span><span>GEELY 125万台</span><span style="color: #c6f24e">◆</span><span>VW GROUP 101万台</span><span style="color: #c6f24e">◆</span><span>SAIC 90万台</span><span style="color: #c6f24e">◆</span><span>CHANGAN 62万台</span><span style="color: #c6f24e">◆</span><span>HYUNDAI·KIA 60万台</span><span style="color: #c6f24e">◆</span><span>BMW 43万台</span><span style="color: #c6f24e">◆</span>
+    </div>
+  </div>
+
+  <section style="padding: clamp(48px, 6vw, 104px) clamp(20px, 5vw, 80px); border-bottom: 1px solid #1a212b">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
+      <div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">01 — RANKING</div>
+        <h2 data-anim="up" style="opacity: 0; margin: 14px 0 0; font-weight: 900; font-size: clamp(26px, 3.6vw, 46px); line-height: 1.15; letter-spacing: -.02em">メーカー別 BEV販売台数</h2>
+        <p style="margin: 12px 0 0; max-width: 46ch; font-size: 14px; line-height: 1.8; color: #8b97a8">年を切り替えると順位が入れ替わる。単位は万台。</p>
+      </div>
+      <div id="ev-years" style="display: flex; gap: 6px; padding: 5px; background: #0e1218; border: 1px solid #1a212b; border-radius: 999px">
+        <button type="button" data-year="2021" style="padding: 9px 17px; border: 0; border-radius: 999px; background: transparent; color: #8b97a8; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all .25s">2021</button>
+        <button type="button" data-year="2022" style="padding: 9px 17px; border: 0; border-radius: 999px; background: transparent; color: #8b97a8; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all .25s">2022</button>
+        <button type="button" data-year="2023" style="padding: 9px 17px; border: 0; border-radius: 999px; background: transparent; color: #8b97a8; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all .25s">2023</button>
+        <button type="button" data-year="2024" style="padding: 9px 17px; border: 0; border-radius: 999px; background: transparent; color: #8b97a8; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all .25s">2024</button>
+        <button type="button" data-year="2025" style="padding: 9px 17px; border: 0; border-radius: 999px; background: #c6f24e; color: #07090d; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: all .25s">2025</button>
+      </div>
+    </div>
+
+    <div id="ev-bars" style="display: grid; gap: 10px; margin-top: clamp(32px, 4vw, 52px)">
+      <div data-bar="byd" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1)">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">BYD</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">中国 · 1位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 100%; height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, #1c6b4c, #3ddc97); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1)"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #3ddc97">226.0</span>
+        </div>
+      </div>
+      <div data-bar="tesla" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1)">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">テスラ</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">米国 · 2位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 72.6%; height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, #7a2418, #e8503a); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1)"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #e8503a">164.0</span>
+        </div>
+      </div>
+      <div data-bar="geely" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1)">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">吉利（Geely）</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">中国 · 3位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 55.3%; height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, #1f4d80, #5aa9ff); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1)"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #5aa9ff">125.0</span>
+        </div>
+      </div>
+      <div data-bar="vw" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1)">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">VWグループ</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">ドイツ · 4位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 44.7%; height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, #4c3a86, #a78bfa); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1)"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #a78bfa">101.0</span>
+        </div>
+      </div>
+      <div data-bar="saic" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1)">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">上汽（SAIC）</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">中国 · 5位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 39.8%; height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, #7a5f17, #ffcf5c); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1)"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #ffcf5c">90.0</span>
+        </div>
+      </div>
+      <div data-bar="changan" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1)">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">長安（Changan）</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">中国 · 6位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 27.4%; height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, #7a4a63, #ff9ecb); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1)"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #ff9ecb">62.0</span>
+        </div>
+      </div>
+      <div data-bar="hk" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1)">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">現代・起亜</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">韓国 · 7位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 26.5%; height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, #17595e, #58e0e8); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1)"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #58e0e8">60.0</span>
+        </div>
+      </div>
+      <div data-bar="bmw" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1)">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">BMWグループ</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">ドイツ · 8位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 19%; height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, #4a5261, #b9c4d4); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1)"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #b9c4d4">43.0</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(48px, 6vw, 104px) clamp(20px, 5vw, 80px); border-bottom: 1px solid #1a212b; background: #090c11">
+    <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">02 — TREND</div>
+    <h2 data-anim="up" style="opacity: 0; margin: 14px 0 0; font-weight: 900; font-size: clamp(26px, 3.6vw, 46px); line-height: 1.15; letter-spacing: -.02em">5年で入れ替わった首位</h2>
+    <p style="margin: 12px 0 0; max-width: 52ch; font-size: 14px; line-height: 1.8; color: #8b97a8">テスラは2023年に頭打ち。BYDと吉利は加速を続け、2025年に序列が変わった。</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 28px">
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #c3ccd8"><span style="width: 22px; height: 3px; background: #3ddc97"></span>BYD</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #c3ccd8"><span style="width: 22px; height: 3px; background: #e8503a"></span>テスラ</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #c3ccd8"><span style="width: 22px; height: 3px; background: #5aa9ff"></span>吉利</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #c3ccd8"><span style="width: 22px; height: 3px; background: #a78bfa"></span>VWグループ</span>
+    </div>
+
+    <div style="margin-top: 22px; padding: clamp(14px, 2vw, 26px) 0">
+      <svg viewBox="0 0 1000 400" style="display: block; width: 100%; height: auto; overflow: visible" role="img" aria-label="メーカー別BEV販売台数の推移 2021-2025">
+        <g stroke="#1a212b" stroke-width="1">
+          <line x1="70" y1="340" x2="985" y2="340"></line>
+          <line x1="70" y1="270" x2="985" y2="270"></line>
+          <line x1="70" y1="200" x2="985" y2="200"></line>
+          <line x1="70" y1="130" x2="985" y2="130"></line>
+          <line x1="70" y1="60" x2="985" y2="60"></line>
+        </g>
+        <g fill="#55616f" font-family="Space Grotesk, sans-serif" font-size="13" text-anchor="end">
+          <text x="58" y="345">0</text>
+          <text x="58" y="275">60</text>
+          <text x="58" y="205">120</text>
+          <text x="58" y="135">180</text>
+          <text x="58" y="65">240</text>
+        </g>
+        <g data-xlabels="" fill="#8b97a8" font-family="Space Grotesk, sans-serif" font-size="14" text-anchor="middle">
+          <text x="80" y="372">2021</text>
+          <text x="300" y="372">2022</text>
+          <text x="520" y="372">2023</text>
+          <text x="740" y="372">2024</text>
+          <text x="960" y="372">2025</text>
+        </g>
+        <text x="70" y="24" fill="#55616f" font-family="Space Grotesk, sans-serif" font-size="12" letter-spacing="2">万台</text>
+
+        <g fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+          <path data-series="vw" data-anim="draw" d="M80,287.1 L300,273.3 L520,250 L740,253.2 L960,222.2" stroke="#a78bfa" stroke-dasharray="1400" stroke-dashoffset="1400"></path>
+          <path data-series="geely" data-anim="draw" d="M80,328.3 L300,310.8 L520,284 L740,249 L960,194.2" stroke="#5aa9ff" stroke-dasharray="1400" stroke-dashoffset="1400"></path>
+          <path data-series="tesla" data-anim="draw" d="M80,230.8 L300,186.7 L520,129 L740,131.3 L960,148.7" stroke="#e8503a" stroke-dasharray="1400" stroke-dashoffset="1400"></path>
+          <path data-series="byd" data-anim="draw" d="M80,302.5 L300,234 L520,156.4 L740,134.2 L960,76.3" stroke="#3ddc97" stroke-dasharray="1400" stroke-dashoffset="1400"></path>
+        </g>
+
+        <g stroke="#090c11" stroke-width="3">
+          <circle data-dot="byd" data-anim="pop" cx="960" cy="76.3" r="7" fill="#3ddc97" opacity="0"></circle>
+          <circle data-dot="tesla" data-anim="pop" cx="960" cy="148.7" r="7" fill="#e8503a" opacity="0"></circle>
+          <circle data-dot="geely" data-anim="pop" cx="960" cy="194.2" r="7" fill="#5aa9ff" opacity="0"></circle>
+          <circle data-dot="vw" data-anim="pop" cx="960" cy="222.2" r="7" fill="#a78bfa" opacity="0"></circle>
+        </g>
+        <g data-anim="fade" opacity="0" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="16">
+          <text data-endlabel="byd" x="938" y="58" fill="#3ddc97" text-anchor="end">226</text>
+          <text data-endlabel="tesla" x="938" y="152" fill="#e8503a" text-anchor="end">164</text>
+          <text data-endlabel="geely" x="938" y="198" fill="#5aa9ff" text-anchor="end">125</text>
+          <text data-endlabel="vw" x="938" y="242" fill="#a78bfa" text-anchor="end">101</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section style="padding: clamp(48px, 6vw, 104px) clamp(20px, 5vw, 80px); border-bottom: 1px solid #1a212b">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start">
+      <div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">03 — SHARE</div>
+        <h2 data-anim="up" style="opacity: 0; margin: 14px 0 0; font-weight: 900; font-size: clamp(26px, 3.6vw, 46px); line-height: 1.15; letter-spacing: -.02em">100台のうち、誰の車か</h2>
+        <p style="margin: 14px 0 0; max-width: 40ch; font-size: 14px; line-height: 1.85; color: #8b97a8">2025年に世界で売れたBEV100台の内訳。上位8社で46台。残り54台は40社以上の寄せ集めで、勝者なき混戦が続く。</p>
+        <div data-legend="" style="display: grid; gap: 9px; margin-top: 30px">
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #3ddc97"></span><span style="flex: 1; color: #c3ccd8">BYD</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">12%</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #e8503a"></span><span style="flex: 1; color: #c3ccd8">テスラ</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">9%</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #5aa9ff"></span><span style="flex: 1; color: #c3ccd8">吉利</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">7%</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #a78bfa"></span><span style="flex: 1; color: #c3ccd8">VWグループ</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">5%</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #ffcf5c"></span><span style="flex: 1; color: #c3ccd8">上汽</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">5%</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #ff9ecb"></span><span style="flex: 1; color: #c3ccd8">長安</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">3%</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #58e0e8"></span><span style="flex: 1; color: #c3ccd8">現代・起亜</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">3%</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #b9c4d4"></span><span style="flex: 1; color: #c3ccd8">BMWグループ</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">2%</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #232c39"></span><span style="flex: 1; color: #c3ccd8">その他</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">54%</span></div>
+        </div>
+      </div>
+
+      <div id="ev-waffle" style="display: grid; grid-template-columns: repeat(10, 1fr); gap: clamp(4px, .7vw, 8px); max-width: 520px; justify-self: center; width: 100%">
+        
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(48px, 6vw, 104px) clamp(20px, 5vw, 80px); border-bottom: 1px solid #1a212b; background: #090c11">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: clamp(36px, 5vw, 72px)">
+      <div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">04 — REGION</div>
+        <h2 data-anim="up" style="opacity: 0; margin: 14px 0 0; font-weight: 900; font-size: clamp(24px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -.02em">売れている場所</h2>
+        <p style="margin: 12px 0 0; max-width: 40ch; font-size: 14px; line-height: 1.8; color: #8b97a8">3台に2台は中国で売れている。中国勢が強いのは、まず巨大な国内市場があるからだ。</p>
+        <div data-regions="" style="display: flex; align-items: flex-end; gap: clamp(10px, 2vw, 20px); height: 240px; margin-top: 36px">
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: #c6f24e">65%</span>
+            <div data-anim="bary" style="width: 100%; height: 65%; transform: scaleY(0); transform-origin: bottom; background: linear-gradient(180deg, #c6f24e, #6f8c2a); border-radius: 2px"></div>
+            <span style="font-size: 12.5px; color: #8b97a8">中国</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: #5aa9ff">19%</span>
+            <div data-anim="bary" style="width: 100%; height: 19%; transform: scaleY(0); transform-origin: bottom; background: linear-gradient(180deg, #5aa9ff, #24466f); border-radius: 2px"></div>
+            <span style="font-size: 12.5px; color: #8b97a8">欧州</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: #e8503a">10%</span>
+            <div data-anim="bary" style="width: 100%; height: 10%; transform: scaleY(0); transform-origin: bottom; background: linear-gradient(180deg, #e8503a, #6b241a); border-radius: 2px"></div>
+            <span style="font-size: 12.5px; color: #8b97a8">北米</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: #b9c4d4">6%</span>
+            <div data-anim="bary" style="width: 100%; height: 6%; transform: scaleY(0); transform-origin: bottom; background: linear-gradient(180deg, #b9c4d4, #4a5261); border-radius: 2px"></div>
+            <span style="font-size: 12.5px; color: #8b97a8">その他</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">05 — MODELS</div>
+        <h2 data-anim="up" style="opacity: 0; margin: 14px 0 0; font-weight: 900; font-size: clamp(24px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -.02em">車種別トップ5</h2>
+        <p style="margin: 12px 0 0; max-width: 40ch; font-size: 14px; line-height: 1.8; color: #8b97a8">メーカーの順位が変わっても、単一車種の王者は依然テスラ。単位は万台。</p>
+        <div data-models="" style="display: grid; gap: 1px; margin-top: 36px; background: #1a212b; border: 1px solid #1a212b; border-radius: 4px; overflow: hidden">
+          <div data-anim="up" style="opacity: 0; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; background: #0b0f15">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #c6f24e">01</span>
+            <span style="font-size: 14.5px">テスラ Model Y</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">96</span>
+          </div>
+          <div data-anim="up" style="opacity: 0; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; background: #0b0f15">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #6f7c8d">02</span>
+            <span style="font-size: 14.5px">テスラ Model 3</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">52</span>
+          </div>
+          <div data-anim="up" style="opacity: 0; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; background: #0b0f15">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #6f7c8d">03</span>
+            <span style="font-size: 14.5px">BYD シーガル</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">41</span>
+          </div>
+          <div data-anim="up" style="opacity: 0; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; background: #0b0f15">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #6f7c8d">04</span>
+            <span style="font-size: 14.5px">吉利 銀河 星願</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">36</span>
+          </div>
+          <div data-anim="up" style="opacity: 0; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; background: #0b0f15">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #6f7c8d">05</span>
+            <span style="font-size: 14.5px">BYD ドルフィン</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">24</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding: clamp(40px, 5vw, 72px) clamp(20px, 5vw, 80px) clamp(52px, 6vw, 88px)">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px 48px; align-items: start">
+      <div style="font-weight: 900; font-size: clamp(20px, 2.4vw, 30px); line-height: 1.4; letter-spacing: -.01em; max-width: 24ch">勢力図は、<span style="color: #c6f24e">まだ固まっていない</span>。</div>
+      <div style="font-size: 12.5px; line-height: 2; color: #6f7c8d">
+        <div style="font-family: 'Space Grotesk', sans-serif; letter-spacing: .2em; color: #8b97a8">NOTES</div>
+        <span data-note="">数値はバッテリーEV（BEV）の乗用車販売・納車台数。グループ単位で集計し、プラグインハイブリッドは含まない。2025年は各社発表値および業界トラッカーの公表値をもとにした概算で、集計機関により差がある。シェアは世界BEV販売に対する比率。</span>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
