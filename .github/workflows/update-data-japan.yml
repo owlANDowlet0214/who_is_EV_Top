@@ -1,0 +1,119 @@
+name: Update EV sales data (Japan)
+
+# 日本版サイト（/japan/）のデータ更新。世界版ワークフローとは別ファイル・別データで共存。
+# 月1回（毎月10日）＋手動実行。deploy.yml は変更しない。PRマージで既存デプロイが走る。
+on:
+  schedule:
+    - cron: '0 3 10 * *'
+  workflow_dispatch:
+    inputs:
+      only:
+        description: '取得対象を絞る（カンマ区切りの makerId。空欄で全社）例: nissan,toyota'
+        required: false
+        default: ''
+      target_year:
+        description: '対象年（空欄なら前年）'
+        required: false
+        default: ''
+      recalc_share:
+        description: 'years最新年から share を再計算するか'
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-data-japan
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install script deps
+        working-directory: japan-scripts
+        run: npm ci || npm install
+
+      - name: Compute month
+        id: ym
+        run: echo "month=$(date +%Y-%m)" >> "$GITHUB_OUTPUT"
+
+      - name: Snapshot previous data
+        run: cp japan/data/ev-sales.json /tmp/prev-ev.json
+
+      - name: Fetch & merge
+        id: merge
+        env:
+          FETCH_ONLY: ${{ github.event.inputs.only }}
+          JADA_TARGET_YEAR: ${{ github.event.inputs.target_year }}
+        run: |
+          FLAGS=""
+          if [ "${{ github.event.inputs.recalc_share }}" = "true" ]; then FLAGS="--recalc-share"; fi
+          node japan-scripts/node_modules/.bin/tsx japan-scripts/update-data.ts $FLAGS | tee /tmp/update.log
+
+      - name: Validate
+        id: validate
+        run: |
+          set +e
+          node japan-scripts/node_modules/.bin/tsx japan-scripts/validate.ts \
+            --data japan/data/ev-sales.json --prev /tmp/prev-ev.json --html japan/index.html \
+            | tee /tmp/validate.log
+          echo "vcode=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+          set -e
+
+      - name: Build PR body & flags
+        id: prbody
+        run: |
+          node japan-scripts/node_modules/.bin/tsx japan-scripts/pr-body.ts /tmp/update.log /tmp/validate.log \
+            > /tmp/pr-body.md 2> /tmp/pr-flags.txt
+          cat /tmp/pr-flags.txt >> "$GITHUB_OUTPUT"
+          echo "----- PR body -----"; cat /tmp/pr-body.md
+
+      - name: Fail on invariant violation
+        if: steps.validate.outputs.vcode != '0'
+        run: |
+          echo "::error::validate.ts が不変条件違反を検出しました。PRは作成しません。"
+          exit 1
+
+      - name: Fail if all fetchers failed
+        if: steps.prbody.outputs.PR_ALL_FAILED == '1'
+        run: |
+          echo "::error::全メーカーの取得に失敗しました。PRは作成しません。"
+          exit 1
+
+      - name: Detect diff
+        id: diff
+        run: |
+          if git diff --quiet -- japan/data/ev-sales.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create Pull Request
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: data/japan-auto-update-${{ steps.ym.outputs.month }}
+          base: maintest
+          title: 'data(japan): EV販売データ自動更新 ${{ steps.ym.outputs.month }}'
+          body-path: /tmp/pr-body.md
+          add-paths: |
+            japan/data/ev-sales.json
+          labels: ${{ steps.prbody.outputs.PR_HAS_FAILED == '1' && 'needs-review' || '' }}
+          delete-branch: true
+
+      - name: No changes
+        if: steps.diff.outputs.changed != 'true'
+        run: echo "差分なし。PRは作成しません。"
