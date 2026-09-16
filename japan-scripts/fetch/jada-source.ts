@@ -16,7 +16,8 @@ import { politeFetchBuffer } from './_util';
 
 /** 年 → 月報ExcelのURL。運用者が実URLを設定する。空なら未設定＝取得不可。 */
 export const JADA_YEAR_XLSX_URL: Record<number, string> = {
-  // 例: 2025: 'https://www.jada.or.jp/files/libs/XXXX/xxxxxxxx.xlsx',
+  2025: 'https://www.jada.or.jp/files/libs/6563/20260108101512344.xlsx',
+  2026: 'https://www.jada.or.jp/files/libs/7573/202609030957479562.xlsx',
 };
 
 const cache = new Map<number, JadaYearResult>();
