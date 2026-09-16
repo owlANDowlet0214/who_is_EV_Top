@@ -42,8 +42,7 @@ jobs:
           node-version: '22'
 
       - name: Install script deps
-        working-directory: japan-scripts
-        run: npm ci || npm install
+        run: cd japan-scripts && npm install
 
       - name: Compute month
         id: ym
