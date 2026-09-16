@@ -2,7 +2,7 @@
    データは data/ev-sales.json が唯一の情報源。index.html の数値は読込前の初期表示。 */
 (function () {
   'use strict';
-  var DATA_URL = 'ev-sales.json';
+  var DATA_URL = 'data/ev-sales.json';
 
   // フォールバック（JSON が読めなかった場合に使う）
   var YEARS = {
@@ -115,7 +115,7 @@
         fill.style.width = (data[k] / max * 100).toFixed(1) + '%';
       }
       var val = row.querySelector('[data-val]');
-      if (val) tween(val, parseFloat(val.textContent) || 0, data[k], 1, 700);
+      if (val) tween(val, parseFloat((val.textContent || '').replace(/,/g, '')) || 0, data[k], 0, 700);
       var rank = row.querySelector('[data-rank]');
       if (rank) rank.textContent = (ORIGIN[k] || '') + ' · ' + (to + 1) + '位';
     });
