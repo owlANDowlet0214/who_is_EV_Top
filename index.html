@@ -272,31 +272,13 @@
   <section style="padding: clamp(48px, 6vw, 104px) clamp(20px, 5vw, 80px); border-bottom: 1px solid #1a212b; background: #090c11">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: clamp(36px, 5vw, 72px)">
       <div>
-        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">04 — REGION</div>
-        <h2 data-anim="up" style="opacity: 0; margin: 14px 0 0; font-weight: 900; font-size: clamp(24px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -.02em">売れている場所</h2>
-        <p style="margin: 12px 0 0; max-width: 40ch; font-size: 14px; line-height: 1.8; color: #8b97a8">BEVの供給源を主体別に見ると、輸入車が最大。国内メーカーの登録車BEVは限られ、軽EVが国産の主力になっている。</p>
-        <div data-regions="" style="display: flex; align-items: flex-end; gap: clamp(10px, 2vw, 20px); height: 240px; margin-top: 36px">
-          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
-            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: #c6f24e">65%</span>
-            <div data-anim="bary" style="width: 100%; height: 65%; transform: scaleY(0); transform-origin: bottom; background: linear-gradient(180deg, #c6f24e, #6f8c2a); border-radius: 2px"></div>
-            <span style="font-size: 12.5px; color: #8b97a8">輸入車</span>
-          </div>
-          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
-            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: #5aa9ff">19%</span>
-            <div data-anim="bary" style="width: 100%; height: 19%; transform: scaleY(0); transform-origin: bottom; background: linear-gradient(180deg, #5aa9ff, #24466f); border-radius: 2px"></div>
-            <span style="font-size: 12.5px; color: #8b97a8">軽BEV</span>
-          </div>
-          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
-            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: #e8503a">10%</span>
-            <div data-anim="bary" style="width: 100%; height: 10%; transform: scaleY(0); transform-origin: bottom; background: linear-gradient(180deg, #e8503a, #6b241a); border-radius: 2px"></div>
-            <span style="font-size: 12.5px; color: #8b97a8">登録・国産</span>
-          </div>
-          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
-            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: #b9c4d4">6%</span>
-            <div data-anim="bary" style="width: 100%; height: 6%; transform: scaleY(0); transform-origin: bottom; background: linear-gradient(180deg, #b9c4d4, #4a5261); border-radius: 2px"></div>
-            <span style="font-size: 12.5px; color: #8b97a8">その他</span>
-          </div>
-        </div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">04 — FUEL MIX</div>
+        <h2 data-anim="up" style="opacity: 0; margin: 14px 0 0; font-weight: 900; font-size: clamp(24px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -.02em">燃料構成（2025年）</h2>
+        <p style="margin: 12px 0 0; max-width: 40ch; font-size: 14px; line-height: 1.8; color: #8b97a8">日本の乗用車はHVが6割を占め、BEVはわずか1.6%。自販連燃料別登録台数（登録車・軽除く）の実測値。</p>
+        <!-- 燃料構成バーチャート（app.jsが描画） -->
+        <div id="ev-fuel-bars" style="margin-top: 36px; display: grid; gap: 14px"></div>
+        <!-- 年次BEV比率の推移 -->
+        <div id="ev-fuel-trend" style="margin-top: 28px; display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; background: #0d1117; border-radius: 12px; padding: 16px"></div>
       </div>
 
       <div>

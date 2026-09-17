@@ -352,3 +352,70 @@
     .then(renderMonthly2026)
     .catch(function (e) { console.warn('[ev] monthly2026.json を読めませんでした。', e); });
 })();
+
+/* -------- 燃料構成グラフ -------- */
+(function () {
+  'use strict';
+  var FUEL_URL = 'data/fuel-composition.json';
+
+  function renderFuelComposition(d) {
+    var latest = String(d.meta.years[d.meta.years.length - 1]);
+    var row = d.years[latest];
+    var total = row.total;
+
+    // 燃料構成バー（2025年）
+    var barsEl = document.getElementById('ev-fuel-bars');
+    if (barsEl) {
+      barsEl.innerHTML = '';
+      d.fuels.forEach(function (f) {
+        var val = row[f.id] || 0;
+        var pct = (val / total * 100).toFixed(1);
+        var wrap = document.createElement('div');
+        wrap.style.cssText = 'display:grid;gap:6px';
+        var header = document.createElement('div');
+        header.style.cssText = 'display:flex;justify-content:space-between;align-items:baseline;font-size:13px';
+        var name = document.createElement('span');
+        name.style.color = f.id === 'ev' ? f.color : '#c3ccd8';
+        name.style.fontWeight = f.id === 'ev' ? '700' : '400';
+        name.textContent = f.name;
+        var pctEl = document.createElement('span');
+        pctEl.style.cssText = 'font-family:"Space Grotesk",sans-serif;font-weight:700;color:' + f.color;
+        pctEl.textContent = pct + '%';
+        header.appendChild(name); header.appendChild(pctEl);
+        var track = document.createElement('div');
+        track.style.cssText = 'height:8px;background:#1a212b;border-radius:4px;overflow:hidden';
+        var fill = document.createElement('div');
+        fill.style.cssText = 'height:100%;border-radius:4px;background:' + f.color +
+          ';width:' + pct + '%;transition:width 1s cubic-bezier(.22,1,.36,1)';
+        track.appendChild(fill);
+        wrap.appendChild(header); wrap.appendChild(track);
+        barsEl.appendChild(wrap);
+      });
+    }
+
+    // 年次BEV比率の推移
+    var trendEl = document.getElementById('ev-fuel-trend');
+    if (trendEl) {
+      trendEl.innerHTML = '';
+      d.meta.years.forEach(function (yr) {
+        var yrow = d.years[String(yr)];
+        var evPct = (yrow.ev / yrow.total * 100).toFixed(1);
+        var cell = document.createElement('div');
+        cell.style.cssText = 'text-align:center;padding:8px 4px';
+        var pctEl = document.createElement('div');
+        pctEl.style.cssText = 'font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(16px,2vw,22px);color:#e8503a';
+        pctEl.textContent = evPct + '%';
+        var labelEl = document.createElement('div');
+        labelEl.style.cssText = 'font-size:11px;color:#55616f;margin-top:4px';
+        labelEl.textContent = yr + '年 BEV比率';
+        cell.appendChild(pctEl); cell.appendChild(labelEl);
+        trendEl.appendChild(cell);
+      });
+    }
+  }
+
+  fetch(FUEL_URL, { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(renderFuelComposition)
+    .catch(function (e) { console.warn('[ev] fuel-composition.json を読めませんでした。', e); });
+})();
