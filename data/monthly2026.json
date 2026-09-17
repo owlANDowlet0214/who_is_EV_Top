@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "year": 2026,
+    "months": [1,2,3,4,5,6,7,8],
+    "unit": "台",
+    "note": "2026年月別BEV登録台数（自販連『燃料別メーカー別台数（乗用車）』月報実測値）。軽BEVは含まない。"
+  },
+  "monthly": {
+    "1": {"import":2209,"nissan":1436,"toyota":1694,"honda":0,"subaru":80},
+    "2": {"import":2692,"nissan":1345,"toyota":2091,"honda":0,"subaru":117},
+    "3": {"import":4777,"nissan":2629,"toyota":3456,"honda":0,"subaru":383},
+    "4": {"import":2761,"nissan":2062,"toyota":1957,"honda":0,"subaru":157},
+    "5": {"import":3271,"nissan":1489,"toyota":2168,"honda":1736,"subaru":293},
+    "6": {"import":6051,"nissan":1603,"toyota":3115,"honda":1061,"subaru":395},
+    "7": {"import":3270,"nissan":2086,"toyota":3047,"honda":730,"subaru":929},
+    "8": {"import":3956,"nissan":1437,"toyota":2017,"honda":385,"subaru":556}
+  },
+  "cumulative": {
+    "import":28987,"nissan":14087,"toyota":19545,"honda":3912,"subaru":2910
+  },
+  "makers": ["import","nissan","toyota","honda","subaru"],
+  "labels": {
+    "import":"輸入車","nissan":"日産","toyota":"トヨタ","honda":"ホンダ","subaru":"SUBARU"
+  },
+  "colors": {
+    "import":"#e8503a","nissan":"#3ddc97","toyota":"#5aa9ff","honda":"#a78bfa","subaru":"#58e0e8"
+  }
+}

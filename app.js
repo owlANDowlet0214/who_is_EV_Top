@@ -219,3 +219,136 @@
     .then(apply)
     .catch(function (e) { console.warn('[ev] ' + DATA_URL + ' を読めませんでした。初期値を表示します。', e); });
 })();
+
+/* -------- 2026年 月別推移グラフ -------- */
+(function () {
+  'use strict';
+  var MONTHLY_URL = 'data/monthly2026.json';
+
+  function renderMonthly2026(d) {
+    var svg = document.getElementById('ev-2026-chart');
+    if (!svg) return;
+    var months = d.meta.months; // [1..8]
+    var makers = d.makers;
+    var colors = d.colors;
+    var labels = d.labels;
+    var monthly = d.monthly;
+    var cumulative = d.cumulative;
+
+    // レイアウト定数
+    var PL = 72, PR = 40, PT = 40, PB = 48;
+    var W = 960, H = 360;
+    var cw = W - PL - PR, ch = H - PT - PB;
+
+    // Y軸最大値
+    var maxVal = 0;
+    months.forEach(function (m) {
+      makers.forEach(function (k) {
+        var v = (monthly[String(m)] || {})[k] || 0;
+        if (v > maxVal) maxVal = v;
+      });
+    });
+    maxVal = Math.ceil(maxVal / 1000) * 1000 + 1000;
+
+    var xOf = function (i) { return PL + (cw / Math.max(months.length - 1, 1)) * i; };
+    var yOf = function (v) { return PT + ch - (v / maxVal) * ch; };
+
+    // グリッド
+    var grid = document.getElementById('ev-2026-grid');
+    grid.innerHTML = '';
+    [0, 0.25, 0.5, 0.75, 1].forEach(function (r) {
+      var y = PT + ch * r;
+      var val = Math.round(maxVal * (1 - r));
+      var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', PL); line.setAttribute('x2', W - PR);
+      line.setAttribute('y1', y); line.setAttribute('y2', y);
+      line.setAttribute('stroke', '#1e2530'); line.setAttribute('stroke-width', '1');
+      grid.appendChild(line);
+      var txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      txt.setAttribute('x', PL - 6); txt.setAttribute('y', y + 4);
+      txt.setAttribute('fill', '#55616f'); txt.setAttribute('font-size', '11');
+      txt.setAttribute('text-anchor', 'end');
+      txt.setAttribute('font-family', "Space Grotesk, sans-serif");
+      txt.textContent = val.toLocaleString();
+      grid.appendChild(txt);
+    });
+
+    // X軸ラベル
+    var xlabels = document.getElementById('ev-2026-xlabels');
+    xlabels.innerHTML = '';
+    months.forEach(function (m, i) {
+      var txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      txt.setAttribute('x', xOf(i)); txt.setAttribute('y', PT + ch + 24);
+      txt.textContent = m + '月';
+      xlabels.appendChild(txt);
+    });
+
+    // 折れ線＋ドット
+    var linesG = document.getElementById('ev-2026-lines');
+    var dotsG = document.getElementById('ev-2026-dots');
+    linesG.innerHTML = ''; dotsG.innerHTML = '';
+    makers.forEach(function (k) {
+      var pts = months.map(function (m, i) {
+        var v = (monthly[String(m)] || {})[k] || 0;
+        return xOf(i).toFixed(1) + ',' + yOf(v).toFixed(1);
+      });
+      var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', 'M' + pts.join(' L'));
+      path.setAttribute('fill', 'none');
+      path.setAttribute('stroke', colors[k]);
+      path.setAttribute('stroke-width', '2.5');
+      path.setAttribute('stroke-linejoin', 'round');
+      linesG.appendChild(path);
+      months.forEach(function (m, i) {
+        var v = (monthly[String(m)] || {})[k] || 0;
+        if (v === 0) return;
+        var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('cx', xOf(i).toFixed(1));
+        c.setAttribute('cy', yOf(v).toFixed(1));
+        c.setAttribute('r', '4');
+        c.setAttribute('fill', colors[k]);
+        dotsG.appendChild(c);
+      });
+    });
+
+    // 凡例
+    var legendEl = document.getElementById('ev-2026-legend');
+    if (legendEl) {
+      legendEl.innerHTML = '';
+      makers.forEach(function (k) {
+        var row = document.createElement('div');
+        row.style.cssText = 'display:flex;align-items:center;gap:8px;font-size:13px';
+        var dot = document.createElement('span');
+        dot.style.cssText = 'width:10px;height:10px;border-radius:50%;flex-shrink:0;background:' + colors[k];
+        var name = document.createElement('span');
+        name.style.color = '#c3ccd8';
+        name.textContent = labels[k];
+        row.appendChild(dot); row.appendChild(name);
+        legendEl.appendChild(row);
+      });
+    }
+
+    // 累計
+    var cumEl = document.getElementById('ev-2026-cumulative');
+    if (cumEl) {
+      cumEl.innerHTML = '';
+      makers.forEach(function (k) {
+        var row = document.createElement('div');
+        row.style.cssText = 'display:flex;justify-content:space-between;gap:16px;font-size:13px';
+        var name = document.createElement('span');
+        name.style.color = '#8b97a8';
+        name.textContent = labels[k];
+        var val = document.createElement('span');
+        val.style.cssText = 'font-weight:700;font-family:"Space Grotesk",sans-serif;color:' + colors[k];
+        val.textContent = (cumulative[k] || 0).toLocaleString() + '台';
+        row.appendChild(name); row.appendChild(val);
+        cumEl.appendChild(row);
+      });
+    }
+  }
+
+  fetch(MONTHLY_URL, { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(renderMonthly2026)
+    .catch(function (e) { console.warn('[ev] monthly2026.json を読めませんでした。', e); });
+})();

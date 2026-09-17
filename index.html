@@ -334,6 +334,39 @@
     </div>
   </section>
 
+  <!-- 2026年 月別推移セクション -->
+  <section id="ev-2026" style="padding: clamp(48px,6vw,96px) clamp(20px,5vw,80px)">
+    <div data-anim="up" style="opacity:0;margin-bottom:32px">
+      <div style="font-size:12px;letter-spacing:.12em;color:#5aa9ff;margin-bottom:8px">2026 MONTHLY</div>
+      <h2 style="font-weight:900;font-size:clamp(22px,3vw,38px);line-height:1.2;margin:0 0 12px">2026年 月別BEV登録台数</h2>
+      <p style="color:#8b97a8;font-size:14px;margin:0">1〜8月の月次推移（登録車・軽除く）。自販連月報実測値。</p>
+    </div>
+    <!-- 折れ線グラフ -->
+    <div data-anim="up" style="opacity:0;background:#0d1117;border-radius:16px;padding:32px 24px 16px;margin-bottom:32px">
+      <svg id="ev-2026-chart" viewBox="0 0 960 360" xmlns="http://www.w3.org/2000/svg"
+           style="width:100%;height:auto;overflow:visible">
+        <!-- Y軸ラベル -->
+        <text x="48" y="28" fill="#55616f" font-family="Space Grotesk,sans-serif" font-size="12" letter-spacing="2">台</text>
+        <!-- グリッド・軸は app.js が描画 -->
+        <g id="ev-2026-grid"></g>
+        <g id="ev-2026-lines"></g>
+        <g id="ev-2026-dots"></g>
+        <g id="ev-2026-xlabels" font-family="Space Grotesk,sans-serif" font-size="13" fill="#55616f" text-anchor="middle"></g>
+      </svg>
+    </div>
+    <!-- 凡例 + 累計 -->
+    <div data-anim="up" style="opacity:0;display:grid;grid-template-columns:1fr 1fr;gap:24px 40px;max-width:680px">
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;color:#55616f;margin-bottom:12px">凡例</div>
+        <div id="ev-2026-legend" style="display:grid;gap:8px"></div>
+      </div>
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;color:#55616f;margin-bottom:12px">1〜8月 累計</div>
+        <div id="ev-2026-cumulative" style="display:grid;gap:8px"></div>
+      </div>
+    </div>
+  </section>
+
   <footer style="padding: clamp(40px, 5vw, 72px) clamp(20px, 5vw, 80px) clamp(52px, 6vw, 88px)">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px 48px; align-items: start">
       <div style="font-weight: 900; font-size: clamp(20px, 2.4vw, 30px); line-height: 1.4; letter-spacing: -.01em; max-width: 24ch">勢力図は、<span style="color: #c6f24e">まだ固まっていない</span>。</div>

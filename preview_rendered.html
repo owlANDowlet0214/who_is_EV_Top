@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本のEV（BEV）普及 インフォグラフィック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #07090d; }
+  * { box-sizing: border-box; }
+  a { color: #c6f24e; text-decoration: none; }
+  a:hover { color: #e4ff96; text-decoration: underline; }
+  ::selection { background: #c6f24e; color: #07090d; }
+  @keyframes evFadeUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+  @keyframes evFade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes evGrowX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes evGrowY { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @keyframes evPop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: scale(1); } }
+  @keyframes evDraw { from { stroke-dashoffset: 1400; } to { stroke-dashoffset: 0; } }
+  @keyframes evMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes evGlow { 0%,100% { opacity: .35; } 50% { opacity: .75; } }
+  @keyframes evSpin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<div id="ev-root" style="background: #07090d; color: #eef2f7; font-family: 'Noto Sans JP', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased">
+
+  <section style="position: relative; padding: clamp(28px, 5vw, 72px) clamp(20px, 5vw, 80px) clamp(40px, 6vw, 96px); overflow: hidden; border-bottom: 1px solid #1a212b">
+    <div style="position: absolute; top: -220px; right: -160px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(198,242,78,.16), transparent 66%); animation: evGlow 7s ease-in-out infinite; pointer-events: none"></div>
+    <div style="position: absolute; top: 40%; left: -180px; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(90,169,255,.14), transparent 66%); animation: evGlow 9s ease-in-out infinite 1.5s; pointer-events: none"></div>
+
+    <div style="position: relative; display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px 20px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .28em; color: #8b97a8; text-transform: uppercase">
+      <span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #c6f24e; box-shadow: 0 0 12px #c6f24e"></span>Japan BEV Report</span>
+      <span>2021 — 2025</span>
+    </div>
+
+    <h1 data-anim="up" style="opacity: 1; position: relative; margin: 22px 0px 0px; font-weight: 900; font-size: clamp(38px, 7.4vw, 104px); line-height: 0.96; letter-spacing: -0.03em; text-wrap: balance; transform: none; stroke-dashoffset: 0;" data-played="1">
+      電気自動車は<br>
+      <span style="color: #c6f24e">誰が</span>売っているのか
+    </h1>
+
+    <p data-anim="up" style="opacity: 1; position: relative; max-width: 54ch; margin: 26px 0px 0px; font-size: clamp(15px, 1.5vw, 19px); line-height: 1.85; color: rgb(169, 181, 197); text-wrap: pretty; transform: none; stroke-dashoffset: 0;" data-played="1">
+      日本のバッテリーEV（BEV）市場は、世界の急拡大とは対照的に長らく停滞してきた。2022年の軽EV「サクラ」で一度伸びたが、その後は失速。新車に占める比率はいまも約1.4%にとどまる。誰がどれだけ売っているのか、公的統計から日本の実像を追う。
+    </p>
+
+    <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px; margin-top: clamp(36px, 5vw, 64px); background: #1a212b; border: 1px solid #1a212b; border-radius: 4px; overflow: hidden">
+      <div data-anim="up" style="opacity: 1; background: rgb(11, 15, 21); padding: 24px 22px 20px; transform: none; stroke-dashoffset: 0;" data-played="1">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .22em; color: #8b97a8">日本の乗用車BEV（2025年）</div>
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1; color: #eef2f7"><span data-kpi="total" data-count="55430" data-decimals="0" data-played="1">55430</span><span style="font-size: .42em; font-weight: 500; color: #8b97a8">台</span></div>
+        <div style="margin-top: 10px; font-size: 12.5px; color: #6f7c8d">前年比 +23%</div>
+      </div>
+      <div data-anim="up" style="opacity: 1; background: rgb(11, 15, 21); padding: 24px 22px 20px; transform: none; stroke-dashoffset: 0;" data-played="1">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .22em; color: #8b97a8">新車に占めるBEV比率</div>
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1; color: #3ddc97"><span data-kpi="topShare" data-count="1.4" data-decimals="1" data-played="1">1.4</span><span style="font-size: .42em; font-weight: 500; color: #8b97a8">%</span></div>
+        <div style="margin-top: 10px; font-size: 12.5px; color: #6f7c8d">世界より低い水準</div>
+      </div>
+      <div data-anim="up" style="opacity: 1; background: rgb(11, 15, 21); padding: 24px 22px 20px; transform: none; stroke-dashoffset: 0;" data-played="1">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .22em; color: #8b97a8">登録BEVの輸入車比率</div>
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1; color: #5aa9ff"><span data-kpi="china" data-count="76" data-decimals="0" data-played="1">76</span><span style="font-size: .42em; font-weight: 500; color: #8b97a8">%</span></div>
+        <div style="margin-top: 10px; font-size: 12.5px; color: #6f7c8d">国内最大の供給源</div>
+      </div>
+      <div data-anim="up" style="opacity: 1; background: rgb(11, 15, 21); padding: 24px 22px 20px; transform: none; stroke-dashoffset: 0;" data-played="1">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .22em; color: #8b97a8">軽BEVの構成比</div>
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1; color: #c6f24e"><span data-kpi="top5" data-count="28" data-decimals="0" data-played="1">28</span><span style="font-size: .42em; font-weight: 500; color: #8b97a8">%</span></div>
+        <div style="margin-top: 10px; font-size: 12.5px; color: #6f7c8d">残りを40社以上が分け合う</div>
+      </div>
+    </div>
+  </section>
+
+  <div style="display: flex; overflow: hidden; border-bottom: 1px solid #1a212b; background: #0b0f15; padding: 13px 0; white-space: nowrap; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)">
+    <div style="display: flex; gap: 40px; padding-right: 40px; animation: evMarquee 34s linear infinite; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .26em; color: #55616f; text-transform: uppercase">
+      <span>輸入車 30,458台</span><span style="color: #c6f24e">◆</span><span>軽BEV 15,545台</span><span style="color: #c6f24e">◆</span><span>日産(登録) 4,875台</span><span style="color: #c6f24e">◆</span><span>トヨタ 4,203台</span><span style="color: #c6f24e">◆</span><span>ホンダ 10台</span><span style="color: #c6f24e">◆</span><span>登録BEV計 39,885台</span><span style="color: #c6f24e">◆</span><span>BEV比率 1.4%</span><span style="color: #c6f24e">◆</span>
+      <span>輸入車 30,458台</span><span style="color: #c6f24e">◆</span><span>軽BEV 15,545台</span><span style="color: #c6f24e">◆</span><span>日産(登録) 4,875台</span><span style="color: #c6f24e">◆</span><span>トヨタ 4,203台</span><span style="color: #c6f24e">◆</span><span>ホンダ 10台</span><span style="color: #c6f24e">◆</span><span>登録BEV計 39,885台</span><span style="color: #c6f24e">◆</span><span>BEV比率 1.4%</span><span style="color: #c6f24e">◆</span>
+    </div>
+  </div>
+
+  <section style="padding: clamp(48px, 6vw, 104px) clamp(20px, 5vw, 80px); border-bottom: 1px solid #1a212b">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
+      <div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">01 — RANKING</div>
+        <h2 data-anim="up" style="opacity: 1; margin: 14px 0px 0px; font-weight: 900; font-size: clamp(26px, 3.6vw, 46px); line-height: 1.15; letter-spacing: -0.02em; transform: none; stroke-dashoffset: 0;" data-played="1">日本のBEV販売 主体別（2021→2025）</h2>
+        <p style="margin: 12px 0 0; max-width: 46ch; font-size: 14px; line-height: 1.8; color: #8b97a8">年を切り替えると順位が入れ替わる。単位は台。</p>
+      </div>
+      <div id="ev-years" style="display: flex; gap: 6px; padding: 5px; background: #0e1218; border: 1px solid #1a212b; border-radius: 999px">
+        <button type="button" data-year="2021" style="padding: 9px 17px; border-radius: 999px; color: rgb(139, 151, 168); font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all .25s; border: 0px; background: transparent;">2021</button>
+        <button type="button" data-year="2022" style="padding: 9px 17px; border-radius: 999px; color: rgb(139, 151, 168); font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all .25s; border: 0px; background: transparent;">2022</button>
+        <button type="button" data-year="2023" style="padding: 9px 17px; border-radius: 999px; color: rgb(139, 151, 168); font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all .25s; border: 0px; background: transparent;">2023</button>
+        <button type="button" data-year="2024" style="padding: 9px 17px; border-radius: 999px; color: rgb(139, 151, 168); font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all .25s; border: 0px; background: transparent;">2024</button>
+        <button type="button" data-year="2025" style="padding: 9px 17px; border-radius: 999px; background: transparent; color: rgb(139, 151, 168); font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all .25s; border: 0px;">2025</button>
+      </div>
+    </div>
+
+    <div id="ev-bars" style="display: grid; gap: 10px; margin-top: clamp(32px, 4vw, 52px)">
+      <div data-bar="import" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1); transform: translateY(0px); z-index: 50;">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">輸入車（合計）</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">海外 · 1位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 100%; height: 100%; transform: scaleX(1); transform-origin: left; background: linear-gradient(90deg, rgb(122, 36, 24), rgb(232, 80, 58)); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1); opacity: 1; stroke-dashoffset: 0; animation: none;" data-played="1"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #e8503a">28987</span>
+        </div>
+      </div>
+      <div data-bar="kei" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1); transform: translateY(40px); z-index: 45;">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">軽BEV</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">日本 · 6位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 0%; height: 100%; transform: scaleX(1); transform-origin: left; background: linear-gradient(90deg, rgb(90, 107, 18), rgb(198, 242, 78)); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1); opacity: 1; stroke-dashoffset: 0; animation: none;" data-played="1"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #c6f24e">0</span>
+        </div>
+      </div>
+      <div data-bar="nissan" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1); transform: translateY(0px); z-index: 48;">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">日産(登録車)</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">日本 · 3位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 48.6%; height: 100%; transform: scaleX(1); transform-origin: left; background: linear-gradient(90deg, rgb(28, 107, 76), rgb(61, 220, 151)); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1); opacity: 1; stroke-dashoffset: 0; animation: none;" data-played="1"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #3ddc97">14087</span>
+        </div>
+      </div>
+      <div data-bar="toyota" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1); transform: translateY(-20px); z-index: 49;">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">トヨタ</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">日本 · 2位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 67.4%; height: 100%; transform: scaleX(1); transform-origin: left; background: linear-gradient(90deg, rgb(31, 77, 128), rgb(90, 169, 255)); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1); opacity: 1; stroke-dashoffset: 0; animation: none;" data-played="1"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #5aa9ff">19545</span>
+        </div>
+      </div>
+      <div data-bar="honda" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1); transform: translateY(-10px); z-index: 47;">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">ホンダ</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">日本 · 4位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 13.5%; height: 100%; transform: scaleX(1); transform-origin: left; background: linear-gradient(90deg, rgb(76, 58, 134), rgb(167, 139, 250)); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1); opacity: 1; stroke-dashoffset: 0; animation: none;" data-played="1"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #a78bfa">3912</span>
+        </div>
+      </div>
+      <div data-bar="mitsubishi" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1); transform: translateY(10px); z-index: 44;">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">三菱(登録車)</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">日本 · 7位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 0%; height: 100%; transform: scaleX(1); transform-origin: left; background: linear-gradient(90deg, rgb(122, 95, 23), rgb(255, 207, 92)); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1); opacity: 1; stroke-dashoffset: 0; animation: none;" data-played="1"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #ffcf5c">0</span>
+        </div>
+      </div>
+      <div data-bar="mazda" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1); transform: translateY(10px); z-index: 43;">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">マツダ</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">日本 · 8位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 0%; height: 100%; transform: scaleX(1); transform-origin: left; background: linear-gradient(90deg, rgb(122, 74, 99), rgb(255, 158, 203)); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1); opacity: 1; stroke-dashoffset: 0; animation: none;" data-played="1"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #ff9ecb">0</span>
+        </div>
+      </div>
+      <div data-bar="subaru" style="display: grid; grid-template-columns: minmax(96px, 148px) 1fr; align-items: center; gap: clamp(12px, 2vw, 24px); transition: transform .7s cubic-bezier(.22,1,.36,1); transform: translateY(-30px); z-index: 46;">
+        <div style="display: flex; flex-direction: column; gap: 3px; text-align: right">
+          <span data-name="" style="font-weight: 700; font-size: clamp(13px, 1.4vw, 16px)">SUBARU</span>
+          <span data-rank="" style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: #6f7c8d">日本 · 5位</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+          <div style="flex: 1; height: clamp(26px, 3.2vw, 40px); background: #0e1218; border-radius: 2px; overflow: hidden">
+            <div data-fill="" data-anim="barx" style="width: 10%; height: 100%; transform: scaleX(1); transform-origin: left; background: linear-gradient(90deg, rgb(23, 89, 94), rgb(88, 224, 232)); border-radius: 2px; transition: width .8s cubic-bezier(.22,1,.36,1); opacity: 1; stroke-dashoffset: 0; animation: none;" data-played="1"></div>
+          </div>
+          <span data-val="" style="min-width: 76px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 22px); color: #58e0e8">2910</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(48px, 6vw, 104px) clamp(20px, 5vw, 80px); border-bottom: 1px solid #1a212b; background: #090c11">
+    <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">02 — TREND</div>
+    <h2 data-anim="up" style="opacity: 1; margin: 14px 0px 0px; font-weight: 900; font-size: clamp(26px, 3.6vw, 46px); line-height: 1.15; letter-spacing: -0.02em; transform: none; stroke-dashoffset: 0;" data-played="1">5年で入れ替わった首位</h2>
+    <p style="margin: 12px 0 0; max-width: 52ch; font-size: 14px; line-height: 1.8; color: #8b97a8">日本のBEVは輸入車と軽EVが二大主役。国産の登録車BEVは日産を除けば数百〜数千台規模にとどまる。登録車は自販連、軽は全軽自協による集計。</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 28px">
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #c3ccd8"><span style="width: 22px; height: 3px; background: #3ddc97"></span>輸入車</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #c3ccd8"><span style="width: 22px; height: 3px; background: #e8503a"></span>軽BEV</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #c3ccd8"><span style="width: 22px; height: 3px; background: #5aa9ff"></span>日産</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #c3ccd8"><span style="width: 22px; height: 3px; background: #a78bfa"></span>トヨタ</span>
+    </div>
+
+    <div style="margin-top: 22px; padding: clamp(14px, 2vw, 26px) 0">
+      <svg viewBox="0 0 1000 400" style="display: block; width: 100%; height: auto; overflow: visible" role="img" aria-label="メーカー別BEV販売台数の推移 2021-2025">
+        <g stroke="#1a212b" stroke-width="1">
+          <line x1="70" y1="340" x2="985" y2="340"></line>
+          <line x1="70" y1="270" x2="985" y2="270"></line>
+          <line x1="70" y1="200" x2="985" y2="200"></line>
+          <line x1="70" y1="130" x2="985" y2="130"></line>
+          <line x1="70" y1="60" x2="985" y2="60"></line>
+        </g>
+        <g fill="#55616f" font-family="Space Grotesk, sans-serif" font-size="13" text-anchor="end">
+          <text x="58" y="345">0</text>
+          <text x="58" y="275">60</text>
+          <text x="58" y="205">120</text>
+          <text x="58" y="135">180</text>
+          <text x="58" y="65">240</text>
+        </g>
+        <g data-xlabels="" fill="#8b97a8" font-family="Space Grotesk, sans-serif" font-size="14" text-anchor="middle">
+          <text x="80" y="372">2021</text>
+          <text x="256" y="372">2022</text>
+          <text x="432" y="372">2023</text>
+          <text x="608" y="372">2024</text>
+          <text x="784" y="372">2025</text>
+        </g>
+        <text x="70" y="24" fill="#55616f" font-family="Space Grotesk, sans-serif" font-size="12" letter-spacing="2">台</text>
+
+        <g fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+          <path data-series="toyota" data-anim="draw" d="M80.0,335.7 L256.0,336.5 L432.0,325.5 L608.0,329.8 L784.0,316.0 L960.0,228.3" stroke="#a78bfa" stroke-dasharray="1400" stroke-dashoffset="1400" data-played="1" style="opacity: 1; transform: none; stroke-dashoffset: 0;"></path>
+          <path data-series="nissan" data-anim="draw" d="M80.0,278.0 L256.0,248.5 L432.0,239.1 L608.0,295.3 L784.0,312.1 L960.0,259.5" stroke="#5aa9ff" stroke-dasharray="1400" stroke-dashoffset="1400" data-played="1" style="opacity: 1; transform: none; stroke-dashoffset: 0;"></path>
+          <path data-series="kei" data-anim="draw" d="M80.0,340.0 L256.0,209.4 L432.0,88.6 L608.0,197.1 L784.0,251.2 L960.0,340.0" stroke="#e8503a" stroke-dasharray="1400" stroke-dashoffset="1400" data-played="1" style="opacity: 1; transform: none; stroke-dashoffset: 0;"></path>
+          <path data-series="import" data-anim="draw" d="M80.0,290.8 L256.0,258.0 L432.0,209.4 L608.0,202.5 L784.0,166.0 L960.0,174.4" stroke="#3ddc97" stroke-dasharray="1400" stroke-dashoffset="1400" data-played="1" style="opacity: 1; transform: none; stroke-dashoffset: 0;"></path>
+        </g>
+
+        <g stroke="#090c11" stroke-width="3">
+          <circle data-dot="import" data-anim="pop" cx="960" cy="174.4" r="7" fill="#3ddc97" opacity="0" data-played="1" style="opacity: 1; transform: none; stroke-dashoffset: 0;"></circle>
+          <circle data-dot="kei" data-anim="pop" cx="960" cy="340.0" r="7" fill="#e8503a" opacity="0" data-played="1" style="opacity: 1; transform: none; stroke-dashoffset: 0;"></circle>
+          <circle data-dot="nissan" data-anim="pop" cx="960" cy="259.5" r="7" fill="#5aa9ff" opacity="0" data-played="1" style="opacity: 1; transform: none; stroke-dashoffset: 0;"></circle>
+          <circle data-dot="toyota" data-anim="pop" cx="960" cy="228.3" r="7" fill="#a78bfa" opacity="0" data-played="1" style="opacity: 1; transform: none; stroke-dashoffset: 0;"></circle>
+        </g>
+        <g data-anim="fade" opacity="0" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="16" data-played="1" style="opacity: 1; transform: none; stroke-dashoffset: 0;">
+          <text data-endlabel="import" x="938" y="156.4" fill="#3ddc97" text-anchor="end">28987</text>
+          <text data-endlabel="kei" x="938" y="322.0" fill="#e8503a" text-anchor="end">0</text>
+          <text data-endlabel="nissan" x="938" y="241.5" fill="#5aa9ff" text-anchor="end">14087</text>
+          <text data-endlabel="toyota" x="938" y="210.3" fill="#a78bfa" text-anchor="end">19545</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section style="padding: clamp(48px, 6vw, 104px) clamp(20px, 5vw, 80px); border-bottom: 1px solid #1a212b">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start">
+      <div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">03 — SHARE</div>
+        <h2 data-anim="up" style="opacity: 1; margin: 14px 0px 0px; font-weight: 900; font-size: clamp(26px, 3.6vw, 46px); line-height: 1.15; letter-spacing: -0.02em; transform: none; stroke-dashoffset: 0;" data-played="1">100台のうち、誰の車か</h2>
+        <p style="margin: 14px 0 0; max-width: 40ch; font-size: 14px; line-height: 1.85; color: #8b97a8">2025年に日本で売れた乗用車BEV100台の内訳（登録車＋軽の概算）。輸入車と軽EVで8割超を占め、国産登録車はごく少数。</p>
+        <div data-legend="" style="display: grid; gap: 9px; margin-top: 30px">
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #e8503a"></span><span style="flex: 1; color: #c3ccd8">輸入車</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">54%</span></div><div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #c6f24e"></span><span style="flex: 1; color: #c3ccd8">軽BEV</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">28%</span></div><div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #3ddc97"></span><span style="flex: 1; color: #c3ccd8">日産(登録)</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">9%</span></div><div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px"><span style="width: 12px; height: 12px; border-radius: 2px; background: #5aa9ff"></span><span style="flex: 1; color: #c3ccd8">トヨタ</span><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">8%</span></div>
+        </div>
+      </div>
+
+      <div id="ev-waffle" style="display: grid; grid-template-columns: repeat(10, 1fr); gap: clamp(4px, .7vw, 8px); max-width: 520px; justify-self: center; width: 100%"><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="輸入車 54%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(232, 80, 58); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="軽BEV 28%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(198, 242, 78); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="日産(登録) 9%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(61, 220, 151); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="日産(登録) 9%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(61, 220, 151); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="日産(登録) 9%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(61, 220, 151); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="日産(登録) 9%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(61, 220, 151); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="日産(登録) 9%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(61, 220, 151); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="日産(登録) 9%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(61, 220, 151); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="日産(登録) 9%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(61, 220, 151); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="日産(登録) 9%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(61, 220, 151); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="日産(登録) 9%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(61, 220, 151); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="トヨタ 8%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(90, 169, 255); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="トヨタ 8%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(90, 169, 255); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="トヨタ 8%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(90, 169, 255); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="トヨタ 8%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(90, 169, 255); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="トヨタ 8%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(90, 169, 255); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="トヨタ 8%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(90, 169, 255); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="トヨタ 8%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(90, 169, 255); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="トヨタ 8%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(90, 169, 255); transform: none; stroke-dashoffset: 0;" data-played="1"></div><div data-anim="pop" title="その他国産 1%" style="opacity: 1; aspect-ratio: 1 / 1; border-radius: 2px; background: rgb(167, 139, 250); transform: none; stroke-dashoffset: 0;" data-played="1"></div></div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(48px, 6vw, 104px) clamp(20px, 5vw, 80px); border-bottom: 1px solid #1a212b; background: #090c11">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: clamp(36px, 5vw, 72px)">
+      <div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">04 — REGION</div>
+        <h2 data-anim="up" style="opacity: 1; margin: 14px 0px 0px; font-weight: 900; font-size: clamp(24px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.02em; transform: none; stroke-dashoffset: 0;" data-played="1">売れている場所</h2>
+        <p style="margin: 12px 0 0; max-width: 40ch; font-size: 14px; line-height: 1.8; color: #8b97a8">BEVの供給源を主体別に見ると、輸入車が最大。国内メーカーの登録車BEVは限られ、軽EVが国産の主力になっている。</p>
+        <div data-regions="" style="display: flex; align-items: flex-end; gap: clamp(10px, 2vw, 20px); height: 240px; margin-top: 36px">
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
+            <span style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: rgb(232, 80, 58);">55%</span>
+            <div data-anim="bary" style="width: 100%; height: 55%; transform: none; transform-origin: bottom; background: linear-gradient(180deg, rgb(232, 80, 58), rgba(232, 80, 58, 0.333)); border-radius: 2px; opacity: 1; stroke-dashoffset: 0;" data-played="1"></div>
+            <span style="font-size: 12.5px; color: #8b97a8">輸入車</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
+            <span style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: rgb(198, 242, 78);">28%</span>
+            <div data-anim="bary" style="width: 100%; height: 28%; transform: none; transform-origin: bottom; background: linear-gradient(180deg, rgb(198, 242, 78), rgba(198, 242, 78, 0.333)); border-radius: 2px; opacity: 1; stroke-dashoffset: 0;" data-played="1"></div>
+            <span style="font-size: 12.5px; color: #8b97a8">軽BEV</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
+            <span style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: rgb(61, 220, 151);">17%</span>
+            <div data-anim="bary" style="width: 100%; height: 17%; transform: none; transform-origin: bottom; background: linear-gradient(180deg, rgb(61, 220, 151), rgba(61, 220, 151, 0.333)); border-radius: 2px; opacity: 1; stroke-dashoffset: 0;" data-played="1"></div>
+            <span style="font-size: 12.5px; color: #8b97a8">登録・国産</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(16px, 2vw, 24px); color: #b9c4d4">0%</span>
+            <div data-anim="bary" style="width: 100%; height: 0%; transform: none; transform-origin: bottom; background: linear-gradient(180deg, rgb(185, 196, 212), rgba(185, 196, 212, 0.333)); border-radius: 2px; opacity: 1; stroke-dashoffset: 0;" data-played="1"></div>
+            <span style="font-size: 12.5px; color: #8b97a8">その他</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .26em; color: #c6f24e">05 — MODELS</div>
+        <h2 data-anim="up" style="opacity: 1; margin: 14px 0px 0px; font-weight: 900; font-size: clamp(24px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.02em; transform: none; stroke-dashoffset: 0;" data-played="1">売れているBEV 上位5（2025年・概算）</h2>
+        <p style="margin: 12px 0 0; max-width: 40ch; font-size: 14px; line-height: 1.8; color: #8b97a8">日本で最も売れるBEVは日産サクラ（軽）。輸入車は合計で最大だがブランド内訳は非公表。単位は台。</p>
+        <div data-models="" style="display: grid; gap: 1px; margin-top: 36px; background: #1a212b; border: 1px solid #1a212b; border-radius: 4px; overflow: hidden">
+          <div data-anim="up" style="opacity: 1; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; background: rgb(11, 15, 21); transform: none; stroke-dashoffset: 0;" data-played="1">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #c6f24e">01</span>
+            <span style="font-size: 14.5px">日産 サクラ（軽）</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">14000</span>
+          </div>
+          <div data-anim="up" style="opacity: 1; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; background: rgb(11, 15, 21); transform: none; stroke-dashoffset: 0;" data-played="1">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #6f7c8d">02</span>
+            <span style="font-size: 14.5px">輸入BEV 合計</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">30458</span>
+          </div>
+          <div data-anim="up" style="opacity: 1; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; background: rgb(11, 15, 21); transform: none; stroke-dashoffset: 0;" data-played="1">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #6f7c8d">03</span>
+            <span style="font-size: 14.5px">日産 リーフ</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">4666</span>
+          </div>
+          <div data-anim="up" style="opacity: 1; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; background: rgb(11, 15, 21); transform: none; stroke-dashoffset: 0;" data-played="1">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #6f7c8d">04</span>
+            <span style="font-size: 14.5px">トヨタ bZ4X 系</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">4203</span>
+          </div>
+          <div data-anim="up" style="opacity: 1; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; background: rgb(11, 15, 21); transform: none; stroke-dashoffset: 0;" data-played="1">
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #6f7c8d">05</span>
+            <span style="font-size: 14.5px">日産 アリア</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">2891</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2026年 月別推移セクション -->
+  <section id="ev-2026" style="padding: clamp(48px,6vw,96px) clamp(20px,5vw,80px)">
+    <div data-anim="up" style="opacity: 1; margin-bottom: 32px; transform: none; stroke-dashoffset: 0;" data-played="1">
+      <div style="font-size:12px;letter-spacing:.12em;color:#5aa9ff;margin-bottom:8px">2026 MONTHLY</div>
+      <h2 style="font-weight:900;font-size:clamp(22px,3vw,38px);line-height:1.2;margin:0 0 12px">2026年 月別BEV登録台数</h2>
+      <p style="color:#8b97a8;font-size:14px;margin:0">1〜8月の月次推移（登録車・軽除く）。自販連月報実測値。</p>
+    </div>
+    <!-- 折れ線グラフ -->
+    <div data-anim="up" style="opacity: 1; background: rgb(13, 17, 23); border-radius: 16px; padding: 32px 24px 16px; margin-bottom: 32px; transform: none; stroke-dashoffset: 0;" data-played="1">
+      <svg id="ev-2026-chart" viewBox="0 0 960 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;overflow:visible">
+        <!-- Y軸ラベル -->
+        <text x="48" y="28" fill="#55616f" font-family="Space Grotesk,sans-serif" font-size="12" letter-spacing="2">台</text>
+        <!-- グリッド・軸は app.js が描画 -->
+        <g id="ev-2026-grid"><line x1="72" x2="920" y1="40" y2="40" stroke="#1e2530" stroke-width="1"></line><text x="66" y="44" fill="#55616f" font-size="11" text-anchor="end" font-family="Space Grotesk, sans-serif">8,000</text><line x1="72" x2="920" y1="108" y2="108" stroke="#1e2530" stroke-width="1"></line><text x="66" y="112" fill="#55616f" font-size="11" text-anchor="end" font-family="Space Grotesk, sans-serif">6,000</text><line x1="72" x2="920" y1="176" y2="176" stroke="#1e2530" stroke-width="1"></line><text x="66" y="180" fill="#55616f" font-size="11" text-anchor="end" font-family="Space Grotesk, sans-serif">4,000</text><line x1="72" x2="920" y1="244" y2="244" stroke="#1e2530" stroke-width="1"></line><text x="66" y="248" fill="#55616f" font-size="11" text-anchor="end" font-family="Space Grotesk, sans-serif">2,000</text><line x1="72" x2="920" y1="312" y2="312" stroke="#1e2530" stroke-width="1"></line><text x="66" y="316" fill="#55616f" font-size="11" text-anchor="end" font-family="Space Grotesk, sans-serif">0</text></g>
+        <g id="ev-2026-lines"><path d="M72.0,236.9 L193.1,220.5 L314.3,149.6 L435.4,218.1 L556.6,200.8 L677.7,106.3 L798.9,200.8 L920.0,177.5" fill="none" stroke="#e8503a" stroke-width="2.5" stroke-linejoin="round"></path><path d="M72.0,263.2 L193.1,266.3 L314.3,222.6 L435.4,241.9 L556.6,261.4 L677.7,257.5 L798.9,241.1 L920.0,263.1" fill="none" stroke="#3ddc97" stroke-width="2.5" stroke-linejoin="round"></path><path d="M72.0,254.4 L193.1,240.9 L314.3,194.5 L435.4,245.5 L556.6,238.3 L677.7,206.1 L798.9,208.4 L920.0,243.4" fill="none" stroke="#5aa9ff" stroke-width="2.5" stroke-linejoin="round"></path><path d="M72.0,312.0 L193.1,312.0 L314.3,312.0 L435.4,312.0 L556.6,253.0 L677.7,275.9 L798.9,287.2 L920.0,298.9" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linejoin="round"></path><path d="M72.0,309.3 L193.1,308.0 L314.3,299.0 L435.4,306.7 L556.6,302.0 L677.7,298.6 L798.9,280.4 L920.0,293.1" fill="none" stroke="#58e0e8" stroke-width="2.5" stroke-linejoin="round"></path></g>
+        <g id="ev-2026-dots"><circle cx="72.0" cy="236.9" r="4" fill="#e8503a"></circle><circle cx="193.1" cy="220.5" r="4" fill="#e8503a"></circle><circle cx="314.3" cy="149.6" r="4" fill="#e8503a"></circle><circle cx="435.4" cy="218.1" r="4" fill="#e8503a"></circle><circle cx="556.6" cy="200.8" r="4" fill="#e8503a"></circle><circle cx="677.7" cy="106.3" r="4" fill="#e8503a"></circle><circle cx="798.9" cy="200.8" r="4" fill="#e8503a"></circle><circle cx="920.0" cy="177.5" r="4" fill="#e8503a"></circle><circle cx="72.0" cy="263.2" r="4" fill="#3ddc97"></circle><circle cx="193.1" cy="266.3" r="4" fill="#3ddc97"></circle><circle cx="314.3" cy="222.6" r="4" fill="#3ddc97"></circle><circle cx="435.4" cy="241.9" r="4" fill="#3ddc97"></circle><circle cx="556.6" cy="261.4" r="4" fill="#3ddc97"></circle><circle cx="677.7" cy="257.5" r="4" fill="#3ddc97"></circle><circle cx="798.9" cy="241.1" r="4" fill="#3ddc97"></circle><circle cx="920.0" cy="263.1" r="4" fill="#3ddc97"></circle><circle cx="72.0" cy="254.4" r="4" fill="#5aa9ff"></circle><circle cx="193.1" cy="240.9" r="4" fill="#5aa9ff"></circle><circle cx="314.3" cy="194.5" r="4" fill="#5aa9ff"></circle><circle cx="435.4" cy="245.5" r="4" fill="#5aa9ff"></circle><circle cx="556.6" cy="238.3" r="4" fill="#5aa9ff"></circle><circle cx="677.7" cy="206.1" r="4" fill="#5aa9ff"></circle><circle cx="798.9" cy="208.4" r="4" fill="#5aa9ff"></circle><circle cx="920.0" cy="243.4" r="4" fill="#5aa9ff"></circle><circle cx="556.6" cy="253.0" r="4" fill="#a78bfa"></circle><circle cx="677.7" cy="275.9" r="4" fill="#a78bfa"></circle><circle cx="798.9" cy="287.2" r="4" fill="#a78bfa"></circle><circle cx="920.0" cy="298.9" r="4" fill="#a78bfa"></circle><circle cx="72.0" cy="309.3" r="4" fill="#58e0e8"></circle><circle cx="193.1" cy="308.0" r="4" fill="#58e0e8"></circle><circle cx="314.3" cy="299.0" r="4" fill="#58e0e8"></circle><circle cx="435.4" cy="306.7" r="4" fill="#58e0e8"></circle><circle cx="556.6" cy="302.0" r="4" fill="#58e0e8"></circle><circle cx="677.7" cy="298.6" r="4" fill="#58e0e8"></circle><circle cx="798.9" cy="280.4" r="4" fill="#58e0e8"></circle><circle cx="920.0" cy="293.1" r="4" fill="#58e0e8"></circle></g>
+        <g id="ev-2026-xlabels" font-family="Space Grotesk,sans-serif" font-size="13" fill="#55616f" text-anchor="middle"><text x="72" y="336">1月</text><text x="193.14285714285714" y="336">2月</text><text x="314.2857142857143" y="336">3月</text><text x="435.42857142857144" y="336">4月</text><text x="556.5714285714286" y="336">5月</text><text x="677.7142857142857" y="336">6月</text><text x="798.8571428571429" y="336">7月</text><text x="920" y="336">8月</text></g>
+      </svg>
+    </div>
+    <!-- 凡例 + 累計 -->
+    <div data-anim="up" style="opacity: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 24px 40px; max-width: 680px; transform: none; stroke-dashoffset: 0;" data-played="1">
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;color:#55616f;margin-bottom:12px">凡例</div>
+        <div id="ev-2026-legend" style="display:grid;gap:8px"><div style="display: flex; align-items: center; gap: 8px; font-size: 13px;"><span style="width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; background: rgb(232, 80, 58);"></span><span style="color: rgb(195, 204, 216);">輸入車</span></div><div style="display: flex; align-items: center; gap: 8px; font-size: 13px;"><span style="width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; background: rgb(61, 220, 151);"></span><span style="color: rgb(195, 204, 216);">日産</span></div><div style="display: flex; align-items: center; gap: 8px; font-size: 13px;"><span style="width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; background: rgb(90, 169, 255);"></span><span style="color: rgb(195, 204, 216);">トヨタ</span></div><div style="display: flex; align-items: center; gap: 8px; font-size: 13px;"><span style="width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; background: rgb(167, 139, 250);"></span><span style="color: rgb(195, 204, 216);">ホンダ</span></div><div style="display: flex; align-items: center; gap: 8px; font-size: 13px;"><span style="width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; background: rgb(88, 224, 232);"></span><span style="color: rgb(195, 204, 216);">SUBARU</span></div></div>
+      </div>
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;color:#55616f;margin-bottom:12px">1〜8月 累計</div>
+        <div id="ev-2026-cumulative" style="display:grid;gap:8px"><div style="display: flex; justify-content: space-between; gap: 16px; font-size: 13px;"><span style="color: rgb(139, 151, 168);">輸入車</span><span style="font-weight: 700; font-family: &quot;Space Grotesk&quot;, sans-serif; color: rgb(232, 80, 58);">28,987台</span></div><div style="display: flex; justify-content: space-between; gap: 16px; font-size: 13px;"><span style="color: rgb(139, 151, 168);">日産</span><span style="font-weight: 700; font-family: &quot;Space Grotesk&quot;, sans-serif; color: rgb(61, 220, 151);">14,087台</span></div><div style="display: flex; justify-content: space-between; gap: 16px; font-size: 13px;"><span style="color: rgb(139, 151, 168);">トヨタ</span><span style="font-weight: 700; font-family: &quot;Space Grotesk&quot;, sans-serif; color: rgb(90, 169, 255);">19,545台</span></div><div style="display: flex; justify-content: space-between; gap: 16px; font-size: 13px;"><span style="color: rgb(139, 151, 168);">ホンダ</span><span style="font-weight: 700; font-family: &quot;Space Grotesk&quot;, sans-serif; color: rgb(167, 139, 250);">3,912台</span></div><div style="display: flex; justify-content: space-between; gap: 16px; font-size: 13px;"><span style="color: rgb(139, 151, 168);">SUBARU</span><span style="font-weight: 700; font-family: &quot;Space Grotesk&quot;, sans-serif; color: rgb(88, 224, 232);">2,910台</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding: clamp(40px, 5vw, 72px) clamp(20px, 5vw, 80px) clamp(52px, 6vw, 88px)">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px 48px; align-items: start">
+      <div style="font-weight: 900; font-size: clamp(20px, 2.4vw, 30px); line-height: 1.4; letter-spacing: -.01em; max-width: 24ch">勢力図は、<span style="color: #c6f24e">まだ固まっていない</span>。</div>
+      <div style="font-size: 12.5px; line-height: 2; color: #6f7c8d">
+        <div style="font-family: 'Space Grotesk', sans-serif; letter-spacing: .2em; color: #8b97a8">NOTES</div>
+        <span data-note="">日本国内の乗用車BEV新車販売・登録台数（単位:台）。登録車のメーカー別は自販連『燃料別メーカー別台数（乗用車）』の年計（2021-2025・実測）および月報（2026年1-8月累計・実測）。2026年は途中経過で年計ではない。軽BEV(kei)は全軽自協・報道の概算（2026年は未集計）。輸入車はブランド内訳非公表。PHEV/HV/FCVは含まない。</span>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="app.js"></script>
+
+
+</body></html>
