@@ -111,7 +111,8 @@
       row.style.zIndex = String(50 - to);
       var fill = row.querySelector('[data-fill]');
       if (fill) {
-        if (fill.dataset.played) { fill.style.animation = 'none'; fill.style.transform = 'scaleX(1)'; }
+        fill.style.animation = 'none';
+        fill.style.transform = 'scaleX(1)';
         fill.style.width = (data[k] / max * 100).toFixed(1) + '%';
       }
       var val = row.querySelector('[data-val]');
